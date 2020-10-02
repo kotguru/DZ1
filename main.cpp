@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
     std::string s;
     std::ifstream file(filename);
     while(getline(file, s)) {
-        std::cout << (adler32_file(s, salt) % numbilets + 1) << std::endl;
+        std::cout << s << ": " << (adler32_file(s, salt) % numbilets + 1) << std::endl;
     }
     file.close();
     return 0;
